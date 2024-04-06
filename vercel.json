@@ -2,11 +2,15 @@
     "vercel":2,
     "name":"study_material",
     "builds":[
-        {"src":"./index.js",
-        "use":"@vercel/node"}
+        {
+            "src":"./app.js",
+            "use":"@vercel/node"
+        }
     ],
     "routes":[
-        {"src":"/.*",
-        "dest":"/index.js"}
+        {
+            "src":"/.*",
+            "dest":"/app.js"
+        }
     ]
 }
