@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-let mongoURI = process.env.mongoURI ;
+let mongoURI = process.env.mongoURI || "mongodb+srv://abhay:royabhayjeet@abhay.7je5cm5.mongodb.net/massgyan"
+
 const connectToMongo = ()=>{
     mongoose.connect(mongoURI);
     console.log("Connected")
