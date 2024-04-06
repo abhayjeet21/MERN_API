@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs');
 var jwt = require('jsonwebtoken');
 const UserSchema = require('../../Schema/UserSchema')
+let JWT_SECRET = process.env.JWT_SECRET || 'Abhayisagoodb$oy' ;
 
 const loginController = async (req, res) => {
   
@@ -24,7 +25,7 @@ const loginController = async (req, res) => {
                 id: user.id
                 }
             }
-            const authtoken = jwt.sign(data, process.env.JWT_SECRET);
+            const authtoken = jwt.sign(data, JWT_SECRET);
             res.json({authtoken })
         }
     } catch (error) {

@@ -4,7 +4,7 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 const path = require('path');
-
+let PORT = process.env.PORT || 4000;
 
 dotenv.config({path:'./.env'});
 app.use(cors());
@@ -19,6 +19,6 @@ app.use('/api/user', require('./Routes/User'));
 app.get('/', (req,res)=>{
     res.send('Hello MassGyan');
 });
-app.listen(process.env.PORT, () => {
-    console.log(`Server started on port http://localhost:${process.env.PORT}`);
+app.listen(PORT, () => {
+    console.log(`Server started on port http://localhost:${PORT}`);
 });
