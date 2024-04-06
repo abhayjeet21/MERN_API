@@ -1,10 +1,12 @@
 {
     "vercel":2,
-    "name":"massgyan",
+    "name":"study_material",
     "builds":[
-        {"src":"server.js","use":"@vercel/node"}
+        {"src":"./index.js",
+        "use":"@vercel/node"}
     ],
     "routes":[
-        {"src":"/(.*)","dest":"/server.js.js"}
+        {"src":"/.*",
+        "dest":"/index.js"}
     ]
 }
